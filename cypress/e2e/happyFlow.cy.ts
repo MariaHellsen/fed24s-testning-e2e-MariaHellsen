@@ -20,7 +20,7 @@ describe("Movie search happy flow", () => {
       .should("have.length.greaterThan", 0);
     cy.get("div#movie-container").children().should("contain.text", "Star");
   });
-  it("should show positiv results for for title with numbers", () => {
+  it("should show positiv results for title with numbers", () => {
     //Assign
     const omdbInput = cy.get("input#searchText").should("exist");
     const searchButton = cy.get("button#search").should("exist");
@@ -34,7 +34,7 @@ describe("Movie search happy flow", () => {
     cy.get("div#movie-container").children().should("contain.text", "1");
   });
 
-  it("should show positiv results for for title with numbers", () => {
+  it("should show positiv results for title with numbers", () => {
     //Assign
     const omdbInput = cy.get("input#searchText").should("exist");
     const searchButton = cy.get("button#search").should("exist");
@@ -46,5 +46,19 @@ describe("Movie search happy flow", () => {
       .children()
       .should("have.length.greaterThan", 0);
     cy.get("div#movie-container").children().should("contain.text", "001");
+  });
+
+  it("should show positiv results on submiting the form - enter", () => {
+    //Assign
+    const omdbInput = cy.get("input#searchText").should("exist");
+
+    //Act
+    omdbInput.type("Star{enter}");
+
+    //Assert
+    cy.get("div#movie-container")
+      .children()
+      .should("have.length.greaterThan", 0);
+    cy.get("div#movie-container").children().should("contain.text", "Star");
   });
 });
