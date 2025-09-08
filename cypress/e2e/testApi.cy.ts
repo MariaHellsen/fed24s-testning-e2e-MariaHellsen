@@ -62,4 +62,24 @@ describe("Movie search happy flow", () => {
       "Inga sökresultat att visa"
     );
   });
+
+  it("should work with real API data", () => {
+    // Assign
+    cy.intercept("GET", "http://omdbapi.com/?apikey=416ed51a&s=Avatar").as(
+      "omdbRequest"
+    );
+
+    //Act
+    cy.get("#searchText").type("Avatar{enter}");
+
+    // Assert
+    cy.wait("@omdbRequest").then((interception) => {
+      expect(interception.request.url).to.contain("s=Avatar");
+
+      expect(interception.response.statusCode).to.equal(200);
+      expect(interception.response.body.Response).to.equal("True");
+    });
+
+    cy.get(".movie").should("exist");
+  });
 });
