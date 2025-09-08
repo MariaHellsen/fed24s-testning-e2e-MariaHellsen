@@ -48,7 +48,7 @@ describe("Movie search happy flow", () => {
     cy.get("div#movie-container").children().should("contain.text", "001");
   });
 
-  it("should show positiv results on submiting the form - enter", () => {
+  it("should show positiv results on clicking enter instead of the buttom", () => {
     //Assign
     const omdbInput = cy.get("input#searchText").should("exist");
 
@@ -60,5 +60,50 @@ describe("Movie search happy flow", () => {
       .children()
       .should("have.length.greaterThan", 0);
     cy.get("div#movie-container").children().should("contain.text", "Star");
+  });
+
+  it("should show no results on submit an empty field", () => {
+    //Assign
+    const omdbInput = cy.get("input#searchText").should("exist");
+
+    //Act
+    omdbInput.type("{enter}");
+
+    //Assert
+    cy.get("div#movie-container").children().should("have.length", 0);
+    cy.get("div#movie-container").should(
+      "contain.text",
+      "Inga sökresultat att visa"
+    );
+  });
+
+  it("should show no results for very short search", () => {
+    //Assign
+    const omdbInput = cy.get("input#searchText").should("exist");
+
+    //Act
+    omdbInput.type("A{enter}");
+
+    //Assert
+    cy.get("div#movie-container").children().should("have.length", 0);
+    cy.get("div#movie-container").should(
+      "contain.text",
+      "Inga sökresultat att visa"
+    );
+  });
+
+  it("should show no results for nonsence text", () => {
+    //Assign
+    const omdbInput = cy.get("input#searchText").should("exist");
+
+    //Act
+    omdbInput.type("osfikenfbshl{enter}");
+
+    //Assert
+    cy.get("div#movie-container").children().should("have.length", 0);
+    cy.get("div#movie-container").should(
+      "contain.text",
+      "Inga sökresultat att visa"
+    );
   });
 });
