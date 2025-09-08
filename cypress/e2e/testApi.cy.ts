@@ -44,4 +44,22 @@ describe("Movie search happy flow", () => {
       .first()
       .should("contain.text", "Movie 1");
   });
+
+  it("should show no results for error state", () => {
+    //Assign
+    const omdbInput = cy.get("input#searchText").should("exist");
+    cy.intercept("GET", "http://omdbapi.com/*", {
+      statusCode: 404,
+      body: { error: "Not found" },
+    });
+
+    //Act
+    omdbInput.type("osfikenfbshl{enter}");
+
+    //Assert
+    cy.get("div#movie-container").should(
+      "contain.text",
+      "Inga sökresultat att visa"
+    );
+  });
 });
