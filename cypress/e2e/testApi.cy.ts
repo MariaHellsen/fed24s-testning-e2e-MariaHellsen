@@ -65,21 +65,15 @@ describe("Movie search happy flow", () => {
 
   it("should work with real API data", () => {
     // Assign
-    cy.intercept("GET", "http://omdbapi.com/?apikey=416ed51a&s=Avatar").as(
-      "omdbRequest"
-    );
+    const omdbInput = cy.get("input#searchText").should("exist");
 
-    //Act
-    cy.get("#searchText").type("Avatar{enter}");
+    // Act
+    omdbInput.type("Man{enter}");
 
     // Assert
-    cy.wait("@omdbRequest").then((interception) => {
-      expect(interception.request.url).to.contain("s=Avatar");
-
-      expect(interception.response.statusCode).to.equal(200);
-      expect(interception.response.body.Response).to.equal("True");
+    cy.get("#movie-container").children().should("have.length.greaterThan", 1);
+    cy.get(".movie").then(($movies) => {
+      cy.log(`Found ${$movies.length} movies`);
     });
-
-    cy.get(".movie").should("exist");
   });
 });
