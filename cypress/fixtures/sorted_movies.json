@@ -1,0 +1,76 @@
+{
+  "Search": [
+    {
+      "Title": "Napoleon Dynamite",
+      "imdbID": "888",
+      "Type": "movie",
+      "Poster": "https://picsum.photos/200/300?random=8",
+      "Year": "2004"
+    },
+    {
+      "Title": "Ghostbusters",
+      "imdbID": "555",
+      "Type": "movie",
+      "Poster": "https://picsum.photos/200/300?random=5",
+      "Year": "1984"
+    },
+    {
+      "Title": "Zoolander",
+      "imdbID": "000",
+      "Type": "movie",
+      "Poster": "https://picsum.photos/200/300?random=10",
+      "Year": "2001"
+    },
+    {
+      "Title": "Mrs. Doubtfire",
+      "imdbID": "777",
+      "Type": "movie",
+      "Poster": "https://picsum.photos/200/300?random=7",
+      "Year": "1993"
+    },
+    {
+      "Title": "Home Alone",
+      "imdbID": "666",
+      "Type": "movie",
+      "Poster": "https://picsum.photos/200/300?random=6",
+      "Year": "1990"
+    },
+    {
+      "Title": "Borat",
+      "imdbID": "222",
+      "Type": "movie",
+      "Poster": "https://picsum.photos/200/300?random=2",
+      "Year": "2006"
+    },
+    {
+      "Title": "Anchorman",
+      "imdbID": "111",
+      "Type": "movie",
+      "Poster": "https://picsum.photos/200/300?random=1",
+      "Year": "2004"
+    },
+    {
+      "Title": "Elf",
+      "imdbID": "444",
+      "Type": "movie",
+      "Poster": "https://picsum.photos/200/300?random=4",
+      "Year": "2003"
+    },
+    {
+      "Title": "Dumb and Dumber",
+      "imdbID": "333",
+      "Type": "movie",
+      "Poster": "https://picsum.photos/200/300?random=3",
+      "Year": "1994"
+    },
+    {
+      "Title": "Rush Hour",
+      "imdbID": "999",
+      "Type": "movie",
+      "Poster": "https://picsum.photos/200/300?random=9",
+      "Year": "1998"
+    }
+  ],
+  "totalResults": "10",
+  "Response": "True"
+}
