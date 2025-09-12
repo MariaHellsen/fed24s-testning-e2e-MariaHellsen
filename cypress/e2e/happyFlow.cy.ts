@@ -34,7 +34,7 @@ describe("Movie search happy flow", () => {
     cy.get("div#movie-container").children().should("contain.text", "1");
   });
 
-  it("should show positiv results for title with numbers", () => {
+  it("should show correct results for title with numbers in different formats", () => {
     //Assign
     const omdbInput = cy.get("input#searchText").should("exist");
     const searchButton = cy.get("button#search").should("exist");
