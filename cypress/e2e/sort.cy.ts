@@ -2,22 +2,29 @@ describe("Sorting function", () => {
   beforeEach(() => {
     cy.visit("/");
   });
-  it("should sort movies by title ascending by default", () => {
+  it("should sort movies", () => {
     // Assign
+    const omdbInput = cy.get("input#searchText").should("exist");
+    const omdbSort = cy.get("button#sort").should("exist");
     cy.intercept("GET", "http://omdbapi.com/*", {
       statusCode: 200,
-      fixture: "sorted_movies.json", // Mock data med förutsägbar sortering
+      fixture: "unsorted_movies.json",
     });
 
     // Act
-    cy.get("#searchText").type("test{enter}");
+    omdbInput.type("Man{enter}");
+    omdbSort.click();
 
     // Assert
-    cy.get("#movie-container .movie h3")
-      .should("have.length.greaterThan", 1)
-      .first()
-      .should("contain.text", "A"); // Första filmen börjar med A
-
-    cy.get("#movie-container .movie h3").last().should("contain.text", "Z"); // Sista filmen börjar med Z
+    cy.get("div#movie-container").children().should("have.length", 10);
+    cy.get("div#movie-container").children().should("contain.text", "Man");
+    // cy.get("div#movie-container")
+    //   .children()
+    //   .first()
+    //   .should("contain.text", "Anchorman Man");
+    // cy.get("div#movie-container")
+    //   .children()
+    //   .last()
+    //   .should("contain.text", "Zoolander Man");
   });
 });

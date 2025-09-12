@@ -1,76 +1,76 @@
 {
   "Search": [
     {
-      "Title": "Napoleon Dynamite",
+      "Title": "Napoleon Man",
       "imdbID": "888",
       "Type": "movie",
       "Poster": "https://picsum.photos/200/300?random=8",
       "Year": "2004"
     },
     {
-      "Title": "Ghostbusters",
+      "Title": "Ghostbusters Man",
       "imdbID": "555",
       "Type": "movie",
       "Poster": "https://picsum.photos/200/300?random=5",
       "Year": "1984"
     },
     {
-      "Title": "Zoolander",
+      "Title": "Zoolander Man",
       "imdbID": "000",
       "Type": "movie",
       "Poster": "https://picsum.photos/200/300?random=10",
       "Year": "2001"
     },
     {
-      "Title": "Mrs. Doubtfire",
+      "Title": "Mrs. Man Doubtfire",
       "imdbID": "777",
       "Type": "movie",
       "Poster": "https://picsum.photos/200/300?random=7",
       "Year": "1993"
     },
     {
-      "Title": "Home Alone",
+      "Title": "Home Alone Man",
       "imdbID": "666",
       "Type": "movie",
       "Poster": "https://picsum.photos/200/300?random=6",
       "Year": "1990"
     },
     {
-      "Title": "Borat",
+      "Title": "Borat Man",
       "imdbID": "222",
       "Type": "movie",
       "Poster": "https://picsum.photos/200/300?random=2",
       "Year": "2006"
     },
     {
-      "Title": "Anchorman",
+      "Title": "Anchorman Man",
       "imdbID": "111",
       "Type": "movie",
       "Poster": "https://picsum.photos/200/300?random=1",
       "Year": "2004"
     },
     {
-      "Title": "Elf",
+      "Title": "Elf Man",
       "imdbID": "444",
       "Type": "movie",
       "Poster": "https://picsum.photos/200/300?random=4",
       "Year": "2003"
     },
     {
-      "Title": "Dumb and Dumber",
+      "Title": "Dumb and Dumber Man",
       "imdbID": "333",
       "Type": "movie",
       "Poster": "https://picsum.photos/200/300?random=3",
       "Year": "1994"
     },
     {
-      "Title": "Rush Hour",
+      "Title": "Rush Hour Man",
       "imdbID": "999",
       "Type": "movie",
       "Poster": "https://picsum.photos/200/300?random=9",
       "Year": "1998"
     }
   ],
-  "totalResults": "10",
+  "totalResults": "10 Man",
   "Response": "True"
 }

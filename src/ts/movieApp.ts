@@ -1,14 +1,23 @@
 import { IMovie } from "./models/Movie";
 import { getData } from "./services/movieService";
+import { movieSort } from "./functions.ts";
 
 let movies: IMovie[] = [];
+let isDescending = true;
 
 export const init = () => {
   let form = document.getElementById("searchForm") as HTMLFormElement;
-  form.addEventListener("submit", (e: SubmitEvent) => {
-    e.preventDefault();
-    handleSubmit();
-  });
+  if (form) {
+    form.addEventListener("submit", (e: SubmitEvent) => {
+      e.preventDefault();
+      handleSubmit();
+    });
+  }
+
+  let sortButton = document.getElementById("sort") as HTMLButtonElement;
+  if (sortButton) {
+    sortButton.addEventListener("click", handleSort);
+  }
 };
 
 export async function handleSubmit() {
@@ -31,6 +40,20 @@ export async function handleSubmit() {
   } catch {
     displayNoResult(container);
   }
+}
+
+function handleSort() {
+  if (movies.length === 0) {
+    return;
+  }
+
+  let container: HTMLDivElement = document.getElementById(
+    "movie-container"
+  ) as HTMLDivElement;
+  const sortedMovies = movieSort(movies, isDescending);
+  container.innerHTML = "";
+  createHtml(sortedMovies, container);
+  isDescending = !isDescending;
 }
 
 export const createHtml = (movies: IMovie[], container: HTMLDivElement) => {
