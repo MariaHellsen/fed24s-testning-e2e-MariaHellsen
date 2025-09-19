@@ -1,4 +1,4 @@
-describe("Movie search happy flow", () => {
+describe("API tests", () => {
   beforeEach(() => {
     cy.visit("/");
   });
@@ -71,7 +71,9 @@ describe("Movie search happy flow", () => {
     omdbInput.type("Man{enter}");
 
     // Assert
-    cy.get("#movie-container").children().should("have.length.greaterThan", 1);
+    cy.get("div#movie-container")
+      .children()
+      .should("have.length.greaterThan", 1);
     cy.get(".movie").then(($movies) => {
       cy.log(`Found ${$movies.length} movies`);
     });
